@@ -3,11 +3,11 @@ CPATH	=	$(VPATH)/stub_code/shuffle_guess_what.c
 OUT_DIR	=	release
 SRC	=	$(VPATH)/Main_code/main.c
 EXE	=	shuffle_guess_what
-INC	=	$(VPATH)/Include/shuffle_guess_what.h
+PERF	=	$(VPATH)/Performance
 BIN	=	obj
 
-$(EXE):	main.o shuffle_guess_what.o mov
-	gcc -o $(VPATH)/$(OUT_DIR)/$(EXE) $(VPATH)/$(BIN)/$(EXE).o $(VPATH)/$(BIN)/main.o
+$(EXE):	main.o shuffle_guess_what.o mov 
+	gcc -pg -o $(VPATH)/$(OUT_DIR)/$(EXE) $(VPATH)/$(BIN)/$(EXE).o $(VPATH)/$(BIN)/main.o
 
 main.o:	$(SRC)  
 	gcc -c $(SRC)
