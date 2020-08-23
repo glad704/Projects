@@ -2,11 +2,13 @@
  * C program for main driver body of the Shuffle guess what card game!!
  */
 
-#include"../Projects/Include/shuffle_guess_what.h"
+#include"/home/gladson/Desktop/Practice/Projects/Include/shuffle_guess_what.h"
+int cash = 100;
 
 int main()
 {
 	int bet;
+	int ch;
 	printf("**Welcome to the Virtual Casino**\n\n");
 	printf("Total cash = $%d\n",cash);
 	while(cash>0)
@@ -19,11 +21,11 @@ int main()
 		}
 		else
 		{
-			shuffle_guess_what(bet);
+			cash = shuffle_guess_what(bet,cash);
 		}
-		printf("\n\n*****Want to play more*****\n\n");
-		scanf("%s",ch);
-		if(ch=='y'||ch=='Y'||ch=='yes'||ch=='YES'||ch=='Yes')
+		printf("\n\n*****Want to play more*****\n0/1?\n");
+		scanf("%d",&ch);
+		if(!ch)
 		{
 			break;
 		}
