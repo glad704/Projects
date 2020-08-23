@@ -1,4 +1,6 @@
-void shuffle_guess_what(int bet)
+#include"/home/gladson/Desktop/Practice/Projects/Include/shuffle_guess_what.h"
+
+int shuffle_guess_what(int bet,int cash)
 {
 	char C[3] = {'J','Q','K'};
 	printf("Shuffling.......");
@@ -25,4 +27,5 @@ void shuffle_guess_what(int bet)
 		cash -= bet;
 		printf("You Loose!! \nResult : \nTotal available cash : %d\n",cash);
 	}
+	return cash;
 }
